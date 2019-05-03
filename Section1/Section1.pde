@@ -40,14 +40,15 @@ class Visualizer {
 
     //???WRITE THIS METHOD!!!
     //THESE ARE WRONG: They just illustrate how they could look
+    int size = 400/values.length;
     for(int i = 0; i < values.length;i++){
       if(values[i]>0){
         fill(0,255,0);
-        rect(x+60*i,y+100-values[i],60,values[i]);
+        rect(x+size*i,y+100-values[i],size,values[i]);
       }
       if(values[i]<0){
         fill(255,0,0);
-        rect(x+60*i,y+100,60,values[i]*-1);
+        rect(x+size*i,y+100,size,values[i]*-1);
       }
     }
     /*
