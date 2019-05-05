@@ -26,29 +26,29 @@ class Visualizer {
     //You can assume 10, but it would be even better 
     //if you could modify it to be larger increments.
     fill(255);
-    rect(x, y, 400, 200);
+    int visX = 400;
+    int visY = 200;
+    rect(x, y, visX, visY);
     //This is a 200x400 box.
     //The width of the visualizer is 400! This rect is the border
 
     //the line is the 0 y-value, the top is 100, the bottom is -100
-    line(x, y+100, x+400, y+100);
+    line(x, y+visY/2, x+visX, y+visY/2);
 
     //You need to use a loop. You need to make the HEIGHT of the bars 
     //the values in the array.
     //Negative values are red, and go below the line.
     //Positive values are green and go above the line.
 
-    //???WRITE THIS METHOD!!!
-    //THESE ARE WRONG: They just illustrate how they could look
-    int size = 400/values.length;
+    int size = visX/values.length;
     for(int i = 0; i < values.length;i++){
       if(values[i]>0){
         fill(0,255,0);
-        rect(x+size*i,y+100-values[i],size,values[i]);
+        rect(x+size*i,y+visY/2-values[i],size,values[i]);
       }
       if(values[i]<0){
         fill(255,0,0);
-        rect(x+size*i,y+100,size,values[i]*-1);
+        rect(x+size*i,y+visY/2,size,values[i]*-1);
       }
     }
     /*
