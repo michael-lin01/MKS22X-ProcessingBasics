@@ -65,7 +65,7 @@ class Visualizer {
     for (int i = 0; i < values.length; i++) {
       values[i] += speeds[i];
       //??? keep them values between max/min value
-
+      if(values[i]>=MAX_VALUE || values[i]<=MIN_VALUE) speeds[i] *= -1;
       //??? reverse the speeds so they oscillate up/down when they reach max/min
     }
   }
@@ -78,5 +78,5 @@ void setup() {
 void draw() {
   background(255);
   v.display();
-  //v.update();
+  v.update();
 }
